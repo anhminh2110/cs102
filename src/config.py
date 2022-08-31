@@ -137,10 +137,10 @@ class ShadowBossConfig:
     ANGRY_INTERVAL_MS: int = 7000
     ANGRY_DURATION_MS: int = 2000
 
-    SP_ARMY_INTERVAL_MS: int = 10000
+    SP_ARMY_INTERVAL_MS: int = 11000
     SP_ARMY_DURATION_MS: int = 2000
 
-    HEAL_INTERVAL_MS: int = 13000
+    HEAL_INTERVAL_MS: int = 15000
     HEAL_DURATION_MS: int = 2000
 
     HURT_DURATION_MS: int = 500

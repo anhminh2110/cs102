@@ -25,7 +25,8 @@ class EntityType(enum.Enum):
     NPC_CO_NGA = 22
     NPC_CHU_NAM = 23
     NPC_CHU_NHAN = 24
-    SHADOW_ALPHA = 25
+    SHADOW_ALPHA = 26
+    NPC_SUN_SHROOM = 25
 
     TRAMPOLINE = 30
     TRAMPOLINE_PART_SPRING = 31
