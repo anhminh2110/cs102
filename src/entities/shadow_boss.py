@@ -5,7 +5,7 @@ from common import util
 from common.event import EventType, GameEvent
 from common.types import ActionType, EntityType
 from common.util import now
-from config import Color, ShadowBossConfig
+from config import Color, ShadowBossConfig, GameConfig
 from entities.bullet import Bullet
 from entities.shadow import Shadow
 
@@ -31,6 +31,22 @@ class ShadowBoss(Shadow):
             interval_ms=ShadowBossConfig.ANGRY_INTERVAL_MS,
         ):
             self._get_angry()
+
+        if self.set_action(
+            ActionType.SP_ARMY,
+            duration_ms=ShadowBossConfig.SP_ARMY_DURATION_MS,
+            interval_ms=ShadowBossConfig.SP_ARMY_INTERVAL_MS,
+        ):
+            self._sp_army()
+
+        # < Added II >
+        if self.set_action(
+            ActionType.HEAL,
+            duration_ms=ShadowBossConfig.HEAL_DURATION_MS,
+            interval_ms=ShadowBossConfig.HEAL_INTERVAL_MS,
+        ):
+            self._heal()
+
         super()._update_action()
 
     def _get_angry(self):
@@ -61,6 +77,26 @@ class ShadowBoss(Shadow):
 
                 if self.hp <= 0:
                     self.die()
+
+    def _sp_army(self):
+        self.noets = 3 # noets = Number Of Enemy To Spawned
+        for _ in range (self.noets):
+            x = random.randint(0, GameConfig.WIDTH)
+            y = random.randint(0, GameConfig.HEIGHT)
+            self.world.add_entity(EntityType.SHADOW, x=x, y=y)
+
+        for _ in range (self.noets *2):
+            x = random.randint(0, GameConfig.WIDTH)
+            self.world.add_entity(EntityType.SHADOW_BULLET, x=x, y=0)
+
+    # < Added II >
+    def _heal(self):
+        healing : int = 0
+        if self.hp < 100 and self.hp > 0:
+            while healing < 1:
+                while self.hp < 100:
+                    self.hp += 1
+                    healing += 1
 
     def render(self, screen, *args, **kwargs) -> None:
         super().render(screen, *args, **kwargs)

@@ -109,7 +109,7 @@ class PlayerBulletConfig:
     SCALE: float = 0.7
     SPEED: int = 35
     GRAVITY: int = 2
-    DAMAGE: int = 10
+    DAMAGE: int = 5
 
     # initial vertical movement
     INIT_DY: int = -10
@@ -136,6 +136,12 @@ class ShadowBossConfig:
 
     ANGRY_INTERVAL_MS: int = 7000
     ANGRY_DURATION_MS: int = 2000
+
+    SP_ARMY_INTERVAL_MS: int = 10000
+    SP_ARMY_DURATION_MS: int = 2000
+
+    HEAL_INTERVAL_MS: int = 13000
+    HEAL_DURATION_MS: int = 2000
 
     HURT_DURATION_MS: int = 500
 

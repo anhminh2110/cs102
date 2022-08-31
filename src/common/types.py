@@ -11,6 +11,8 @@ class ActionType(enum.Enum):
     DYING = "dying"
     HURT = "hurt"
     ANGRY = "angry"
+    SP_ARMY = "sp_army"
+    HEAL = "heal"
 
 
 class EntityType(enum.Enum):
