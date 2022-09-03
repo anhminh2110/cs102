@@ -247,3 +247,10 @@ class World(BaseScene):
         if isinstance(entity_types, EntityType):
             entity_types = [entity_types]
         return [entity for entity in self.entities.values() if entity.entity_type in entity_types]
+
+    def get_stallia(self) -> List[BaseEntity]:
+        return [
+            entity
+            for entity in self.entities.values()
+            if entity.entity_type == EntityType.STALLIA
+        ]

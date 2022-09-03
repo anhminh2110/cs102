@@ -51,6 +51,8 @@ class Player(AnimatedEntity):
         self._update_screen_offset()
         self._maybe_jump_with_trampoline()
 
+        self._knock_back()
+
         # Manage the dependent entities.
         self._update_hp_entity()
         self._update_inventory_entity()
@@ -227,3 +229,9 @@ class Player(AnimatedEntity):
                     ActionType.ANIMATE, duration_ms=TrampolineConfig.ANIMATION_DURATION_MS
                 )
                 self.jump_with_trampoline()
+
+    def _knock_back(self):
+        for stallia in self.world.get_stallia():
+            if self.collide(stallia):
+                self.jump()
+                self.move_left(True)
