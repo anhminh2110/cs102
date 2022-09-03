@@ -14,6 +14,7 @@ from config import (
     ShadowBulletConfig,
     ShadowConfig,
     TrampolineConfig,
+    StalliaConfig,
 )
 from entities.base_entity import BaseEntity
 from entities.bullet import Bullet
@@ -27,6 +28,7 @@ from entities.shadow_alpha import ShadowAlpha
 from entities.shadow_boss import ShadowBoss
 from entities.trampoline import Trampoline
 from entities.trampoline_part import TrampolinePart
+from entities.stallia import Stallia
 
 
 class EntityFactory:
@@ -156,6 +158,19 @@ class EntityFactory:
                 scale=TrampolineConfig.SCALE,
                 animation_interval_ms=TrampolineConfig.ANIMATION_INTERVAL_MS,
             )
+
+        # Added
+        elif entity_type == EntityType.STALLIA:
+            return Stallia(
+                entity_type=entity_type,
+                x=x,
+                y=y,
+                sprite_path=StalliaConfig.SPRITE_PATH,
+                scale=StalliaConfig.SCALE,
+                animation_interval_ms=StalliaConfig.ANIMATION_INTERVAL_MS,
+
+            )
+
         elif entity_type in TRAMPOLINE_PART_TYPES:
             return TrampolinePart(
                 entity_type=entity_type,

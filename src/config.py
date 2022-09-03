@@ -168,7 +168,7 @@ class TrampolineConfig:
 
 class StalliaConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "stallia"
-    SCALE: float = 0.5
+    SCALE: float = 0.425
     ANIMATION_INTERVAL_MS: int = 60
     ANIMATION_DURATION_MS: int = 700
 
