@@ -202,6 +202,10 @@ class AnimatedEntity(MovableEntity):
         # logger.debug(f"Loaded a total of {cnt} sprites for {len(sprites)} actions")
         return sprites
 
+    # Added
+    def stop(self):
+        super().stop()
+
 
 class PropEntity(AnimatedEntity):
     """

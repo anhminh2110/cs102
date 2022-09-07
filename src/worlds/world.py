@@ -254,3 +254,18 @@ class World(BaseScene):
         if isinstance(entity_types, EntityType):
             entity_types = [entity_types]
         return [entity for entity in self.entities.values() if entity.entity_type in entity_types]
+
+    # added
+    def get_bombs(self) -> List[BaseEntity]:
+        return [
+            entity
+            for entity in self.entities.values()
+            if entity.entity_type == EntityType.BOMB
+        ]
+    # added
+    def get_bosses(self) -> List[BaseEntity]:
+        return [
+            entity
+            for entity in self.entities.values()
+            if entity.entity_type == EntityType.SHADOW_BOSS
+        ]

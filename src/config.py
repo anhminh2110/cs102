@@ -27,8 +27,8 @@ class Color:
     TEXT_INVENTORY_CNT = (255, 255, 0)
 
     # COT MOC 3: roll credits
-    # TEXT_INTERNSHIP_REPORT = (242, 222, 179)
-    # TEXT_CREDIT = (230, 147, 154)
+    TEXT_INTERNSHIP_REPORT = (242, 222, 179)
+    TEXT_CREDIT = (230, 147, 154)
 
 
 class GameConfig:
@@ -77,9 +77,9 @@ class PlayerConfig:
     SPRITE_PATH: Path = ASSET_DIR / "player"
     SCALE: float = 0.16
     GRAVITY: int = 2
-    SPEED: int = 7
-    JUMP_VERTICAL_SPEED: int = 26
-    JUMP_WITH_TRAMPOLINE_SPEED: int = 40
+    SPEED: int = 15
+    JUMP_VERTICAL_SPEED: int = 30
+    JUMP_WITH_TRAMPOLINE_SPEED: int = 45
     # minimal time until switching to the next sprite in sequence
     ANIMATION_INTERVAL_MS: int = 70 * 60 // GameConfig.FPS
     INITIAL_HP: int = 3
@@ -145,6 +145,7 @@ class ShadowBossConfig:
     ANGRY_DURATION_MS: int = 2000
 
     HURT_DURATION_MS: int = 500
+
 
 
 class ShadowBulletConfig:

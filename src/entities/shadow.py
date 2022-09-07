@@ -48,3 +48,7 @@ class Shadow(AnimatedEntity):
 
         if self.collide(self.world.player):
             self.die()
+
+    # Added
+    def stop(self):
+        super().stop()

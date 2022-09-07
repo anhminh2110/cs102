@@ -22,6 +22,8 @@ class ShadowBoss(Shadow):
         self.initial_hp = ShadowBossConfig.INITIAL_HP
         self.hp = self.initial_hp
         self.recent_action_started_at[ActionType.ANGRY] = now()
+        self.being_frozen = False
+
 
     def _update_action(self):
         if self.set_action(
@@ -30,6 +32,7 @@ class ShadowBoss(Shadow):
             interval_ms=ShadowBossConfig.ANGRY_INTERVAL_MS,
         ):
             self._get_angry()
+
         super()._update_action()
 
     def _get_angry(self):
@@ -42,6 +45,8 @@ class ShadowBoss(Shadow):
 
             bullet: Bullet = self.world.get_entity(bullet_id)
             bullet.move_random()
+
+
 
     def _take_damage(self, damage: int):
         self.hp -= damage

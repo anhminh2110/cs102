@@ -11,6 +11,8 @@ class ActionType(enum.Enum):
     DYING = "dying"
     HURT = "hurt"
     ANGRY = "angry"
+    # Added
+    BEING_FROZEN = "being_frozen"
 
 
 class EntityType(enum.Enum):
@@ -34,6 +36,7 @@ class EntityType(enum.Enum):
     # Collectable Items 60 -> 79
     CANDY = 60
     HEART = 61
+    BOMB = 62
 
     # When the player collects this item, the level ends.
     # For regular levels (ie. no special end-level condition), when designing the CSV file
@@ -49,7 +52,7 @@ class EntityType(enum.Enum):
     HP_HEART = 107
 
     # COT MOC 2: burger rain
-    # ENDING_BURGER = 108
+    ENDING_BURGER = 108
 
 
 OBSTACLES_TYPES = (EntityType.GROUND_A, EntityType.GROUND_B)

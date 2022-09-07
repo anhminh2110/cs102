@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Iterable, List, Optional, Sequence
 
 import pygame
+import random
 
 from common import util
 from common.event import EventType, GameEvent
@@ -158,6 +159,16 @@ class Player(AnimatedEntity):
 
                 if entity.entity_type == EntityType.LEVEL_END_FLAG:
                     GameEvent(EventType.LEVEL_END).post()
+
+        # added
+        for entity in self.world.get_bombs():
+            if self.collide(entity):
+                self.world.remove_entity(entity.id)
+                logger.info(f"Coffee rain incoming !!")
+                for _ in range (30):
+                    x = random.randint(0, 7000)
+                    y = random.randint(0, 700)
+                    self.world.add_entity(entity_type=EntityType.SHADOW_BULLET, x=x, y=y)
 
     def _handle_throw(self):
         """
