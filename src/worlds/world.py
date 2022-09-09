@@ -269,3 +269,10 @@ class World(BaseScene):
             for entity in self.entities.values()
             if entity.entity_type == EntityType.SHADOW_BOSS
         ]
+
+    def get_hearts(self) -> List[BaseEntity]:
+        return [
+            entity
+            for entity in self.entities.values()
+            if entity.entity_type == EntityType.HEART
+        ]

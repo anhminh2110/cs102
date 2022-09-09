@@ -1,0 +1,43 @@
+{
+  "name": "Sun Shroom",
+  "dialogues": [
+    [
+      {
+        "Subject": "Sun Shroom",
+        "Line": "Xin chào em! Em tên là gì?"
+      },
+      {
+        "Subject": "Táy Máy",
+        "Line": "Xin chào ! Mình là Táy Máy"
+      },
+      {
+        "Subject": "Sun Shroom",
+        "Line": "Rất vui được gặp bạn. Xin được giới thiệu, mình là một thực vật ở đây."
+      },
+      {
+        "Subject": "Sun Shroom",
+        "Line": "Bạn có thể chỉ cho mình chúa tể bóng đen đang ở đâu được không?"
+      },
+      {
+        "Subject": "Sun Shroom",
+        "Line": "Thẳng đến thung lũng, nhảy qua trampoline và các thuộc hạ của người."
+      },
+      {
+        "Subject": "Sun Shroom",
+        "Line": "Kẻ xấu có thể làm xuất hiện thêm thuộc hạ, vừa có thể hồi máu cho bản thân."
+      },
+      {
+        "Subject": "Táy Máy",
+        "Line": "Cảm ơn vì lời khuyên và xin tạm biệt."
+      }
+    ],
+    [
+      {
+        "Subject": "Sun Shroom",
+        "Line": "Chúc bạn may mắn nhé."
+      }
+    ]
+  ]
+}
+
+

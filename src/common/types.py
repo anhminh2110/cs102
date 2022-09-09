@@ -26,6 +26,7 @@ class EntityType(enum.Enum):
     NPC_CHU_NAM = 23
     NPC_CHU_NHAN = 24
     SHADOW_ALPHA = 25
+    NPC_SUN_SHROOM = 26
 
     TRAMPOLINE = 30
     TRAMPOLINE_PART_SPRING = 31
@@ -56,12 +57,12 @@ class EntityType(enum.Enum):
 
 
 OBSTACLES_TYPES = (EntityType.GROUND_A, EntityType.GROUND_B)
-FRIENDLY_NPC_TYPES = (EntityType.NPC_CO_NGA, EntityType.NPC_CHU_NAM, EntityType.NPC_CHU_NHAN)
+FRIENDLY_NPC_TYPES = (EntityType.NPC_CO_NGA, EntityType.NPC_CHU_NAM,
+                      EntityType.NPC_CHU_NHAN, EntityType.NPC_SUN_SHROOM)
 TRAMPOLINE_PART_TYPES = (EntityType.TRAMPOLINE_PART_SPRING, EntityType.TRAMPOLINE_PART_FRAME)
 
 COLLECTABLE_TYPES = (
     EntityType.LEVEL_END_FLAG,
-    EntityType.HEART,
     EntityType.CANDY,
 ) + TRAMPOLINE_PART_TYPES
 
