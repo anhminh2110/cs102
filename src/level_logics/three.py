@@ -31,10 +31,10 @@ def event_handler(world: World) -> None:
     if boss_died_at_ms is not None:
         """"""
         # COT MOC 2: burger rain
-        # for _ in range(2):
-        #     world.add_entity(EntityType.ENDING_BURGER, x=random.randint(0, GameConfig.WIDTH), y=0)
+        for _ in range(2):
+            world.add_entity(EntityType.ENDING_BURGER, x=random.randint(0, GameConfig.WIDTH), y=0)
 
         # COT MOC 3: roll credits
-        # if now() > boss_died_at_ms + 4300:
-        #     boss_died_at_ms = None
-        #     GameEvent(EventType.VICTORY).post()  # it's time to roll the credits
+        if now() > boss_died_at_ms + 4300:
+            boss_died_at_ms = None
+            GameEvent(EventType.VICTORY).post()  # it's time to roll the credits

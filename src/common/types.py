@@ -27,6 +27,7 @@ class EntityType(enum.Enum):
     NPC_CHU_NHAN = 24
     SHADOW_ALPHA = 25
     NPC_SUN_SHROOM = 26
+    NPC_LIL_BUDDY = 27
 
     TRAMPOLINE = 30
     TRAMPOLINE_PART_SPRING = 31
@@ -42,6 +43,8 @@ class EntityType(enum.Enum):
     # When the player collects this item, the level ends.
     # For regular levels (ie. no special end-level condition), when designing the CSV file
     # you can put this item at the end of the map.
+    FLAG_PART_1 = 97
+    FLAG_PART_2 = 98
     LEVEL_END_FLAG = 99
 
     QUESTION_MARK = 101
@@ -58,16 +61,18 @@ class EntityType(enum.Enum):
 
 OBSTACLES_TYPES = (EntityType.GROUND_A, EntityType.GROUND_B)
 FRIENDLY_NPC_TYPES = (EntityType.NPC_CO_NGA, EntityType.NPC_CHU_NAM,
-                      EntityType.NPC_CHU_NHAN, EntityType.NPC_SUN_SHROOM)
+                      EntityType.NPC_CHU_NHAN, EntityType.NPC_SUN_SHROOM, EntityType.NPC_LIL_BUDDY)
 TRAMPOLINE_PART_TYPES = (EntityType.TRAMPOLINE_PART_SPRING, EntityType.TRAMPOLINE_PART_FRAME)
+FLAG_PART_TYPES = (EntityType.FLAG_PART_1, EntityType.FLAG_PART_2)
 
 COLLECTABLE_TYPES = (
     EntityType.LEVEL_END_FLAG,
     EntityType.CANDY,
-) + TRAMPOLINE_PART_TYPES
+) + TRAMPOLINE_PART_TYPES + FLAG_PART_TYPES
 
 FIXED_POSITION_TYPES = (EntityType.DIALOGUE_BOX, EntityType.PLAYER_HP, EntityType.PLAYER_INVENTORY)
 
 
 class QuestName(enum.Enum):
     TRAMPOLINE = enum.auto()
+    FLAG = enum.auto()
