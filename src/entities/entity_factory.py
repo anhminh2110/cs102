@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from common.types import FRIENDLY_NPC_TYPES, TRAMPOLINE_PART_TYPES, EntityType
+from common.types import FRIENDLY_NPC_TYPES, TRAMPOLINE_PART_TYPES, FLAG_PART_TYPES, EntityType
 from config import (
     ASSET_DIR,
     DialogueBoxConfig,
@@ -28,6 +28,7 @@ from entities.shadow_alpha import ShadowAlpha
 from entities.shadow_boss import ShadowBoss
 from entities.trampoline import Trampoline
 from entities.trampoline_part import TrampolinePart
+from entities.flag_part import FlagPart
 
 
 class EntityFactory:
@@ -165,6 +166,16 @@ class EntityFactory:
                 sprite_path=ASSET_DIR / "items" / f"{entity_type.name.lower()}.png",
                 scale=(GameConfig.TILE_SIZE, GameConfig.TILE_SIZE),
             )
+
+        elif entity_type in FLAG_PART_TYPES:
+            return FlagPart(
+                entity_type=entity_type,
+                x=x,
+                y=y,
+                sprite_path=ASSET_DIR / "items" / f"{entity_type.name.lower()}.png",
+                scale=(GameConfig.TILE_SIZE, GameConfig.TILE_SIZE),
+            )
+
         # MOC 2: burger rain
         elif entity_type == EntityType.ENDING_BURGER:
             return Bullet(
