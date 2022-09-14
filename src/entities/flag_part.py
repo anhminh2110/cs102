@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 class FlagPart(BaseEntity):
     """
-    Trampoline parts that can be picked up to give to an NPC.
+    Flag parts that can be picked up to give to an NPC.
     """
 
     def __init__(self, *args, **kwargs):

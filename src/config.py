@@ -144,6 +144,9 @@ class ShadowBossConfig:
     ANGRY_INTERVAL_MS: int = 7000
     ANGRY_DURATION_MS: int = 2000
 
+    SHIELDED_INTERVAL_MS: int = 10000
+    SHIELDED_DURATION_MS: int = 6000
+
     HURT_DURATION_MS: int = 500
 
 

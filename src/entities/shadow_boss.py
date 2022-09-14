@@ -19,6 +19,7 @@ class ShadowBoss(Shadow):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.new_hp = 100
         self.initial_hp = ShadowBossConfig.INITIAL_HP
         self.hp = self.initial_hp
         self.recent_action_started_at[ActionType.ANGRY] = now()
@@ -33,6 +34,13 @@ class ShadowBoss(Shadow):
         ):
             self._get_angry()
 
+        if self.set_action(
+            ActionType.SHIELDED,
+            duration_ms=ShadowBossConfig.SHIELDED_DURATION_MS,
+            interval_ms=ShadowBossConfig.SHIELDED_INTERVAL_MS,
+        ):
+            self._shielded()
+
         super()._update_action()
 
     def _get_angry(self):
@@ -45,12 +53,19 @@ class ShadowBoss(Shadow):
 
             bullet: Bullet = self.world.get_entity(bullet_id)
             bullet.move_random()
-
-
-
     def _take_damage(self, damage: int):
         self.hp -= damage
         self.start_hurt(duration_ms=ShadowBossConfig.HURT_DURATION_MS)
+
+    def _shielded(self):
+        a = 5
+        if self.hp < self.new_hp:
+            if self.hp < 95:
+                a = 5
+            else:
+                a = 0
+            self.hp = self.hp + self.new_hp - self.hp + a
+            self.new_hp = self.hp
 
     def _handle_get_hit(self):
         bullet: Bullet

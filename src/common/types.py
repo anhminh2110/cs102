@@ -12,7 +12,7 @@ class ActionType(enum.Enum):
     HURT = "hurt"
     ANGRY = "angry"
     # Added
-    BEING_FROZEN = "being_frozen"
+    SHIELDED = "shielded"
 
 
 class EntityType(enum.Enum):
