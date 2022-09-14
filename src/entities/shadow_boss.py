@@ -19,11 +19,9 @@ class ShadowBoss(Shadow):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.new_hp = 100
         self.initial_hp = ShadowBossConfig.INITIAL_HP
         self.hp = self.initial_hp
         self.recent_action_started_at[ActionType.ANGRY] = now()
-        self.being_frozen = False
 
 
     def _update_action(self):
@@ -58,14 +56,9 @@ class ShadowBoss(Shadow):
         self.start_hurt(duration_ms=ShadowBossConfig.HURT_DURATION_MS)
 
     def _shielded(self):
-        a = 5
-        if self.hp < self.new_hp:
-            if self.hp < 95:
-                a = 5
-            else:
-                a = 0
-            self.hp = self.hp + self.new_hp - self.hp + a
-            self.new_hp = self.hp
+        heal_rate : int = 49
+        if self.hp < self.initial_hp - heal_rate:
+            self.hp += heal_rate
 
     def _handle_get_hit(self):
         bullet: Bullet

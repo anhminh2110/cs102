@@ -180,7 +180,6 @@ class TrampolineConfig:
     ANIMATION_INTERVAL_MS: int = 60
     ANIMATION_DURATION_MS: int = 700
 
-
 @dataclass
 class NpcConfig:
     entity_type: EntityType

@@ -39,6 +39,7 @@ class EntityType(enum.Enum):
     CANDY = 60
     HEART = 61
     BOMB = 62
+    STALLIA = 63
 
     # When the player collects this item, the level ends.
     # For regular levels (ie. no special end-level condition), when designing the CSV file

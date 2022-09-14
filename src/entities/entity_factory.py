@@ -158,6 +158,16 @@ class EntityFactory:
                 scale=TrampolineConfig.SCALE,
                 animation_interval_ms=TrampolineConfig.ANIMATION_INTERVAL_MS,
             )
+
+        elif entity_type == EntityType.STALLIA:
+            return BaseEntity(
+                entity_type=entity_type,
+                x=x,
+                y=y,
+                sprite_path=ASSET_DIR / "items" / f"{entity_type.name.lower()}.png",
+                scale=0.15,
+            )
+
         elif entity_type in TRAMPOLINE_PART_TYPES:
             return TrampolinePart(
                 entity_type=entity_type,
