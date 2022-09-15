@@ -1,41 +1,41 @@
 {
-  "name": "Chú Nam",
+  "name": "Lil Buddy",
   "dialogues": [
     [
       {
-        "Subject": "Chú Nam",
-        "Line": "Em là Táy Máy, thực tập sinh mới phải không?"
+        "Subject": "Táy Máy",
+        "Line": "Chào bạn. Mình có lẽ đang tới đường cụt rồi ..."
       },
       {
         "Subject": "Táy Máy",
-        "Line": "Dạ đúng rồi ạ."
+        "Line": "... Bạn có thể cho mình biết cách thoát khỏi đây được không?"
       },
       {
-        "Subject": "Chú Nam",
-        "Line": "Em đi tham quan vui vẻ nhé."
+        "Subject": "Lil Buddy",
+        "Line": "Thường thì sẽ có một lá cờ để thoát khỏi nơi đây nhưng ..."
+      },
+      {
+        "Subject": "Lil Buddy",
+        "Line": "... có lẽ lá cờ đã bị ăn cắp"
+      },
+      {
+        "Subject": "Lil Buddy",
+        "Line": " Nhưng mình vẫn có thể làm lại nó."
+      },
+      {
+        "Subject": "Lil Buddy",
+        "Line": " Tuy nhiên mình cần một lá cờ và một cây cột đễ làm lại"
       },
       {
         "Subject": "Táy Máy",
-        "Line": "Nhưng ở đây đường đi tiếp cao quá ạ..."
-      },
-      {
-        "Subject": "Chú Nam",
-        "Line": " Aha, anh có thể làm một cái bật nhún!"
-      },
-      {
-        "Subject": "Chú Nam",
-        "Line": "Em kiếm cho anh một số linh kiện để làm nhé?"
-      },
-      {
-        "Subject": "Táy Máy",
-        "Line": "Được ạ!",
+        "Line": " Vậy thì tốt quá, mình sẽ giúp bạn kiếm đủ.",
         "QuestToStart": "FLAG"
       }
     ],
     [
       {
-        "Subject": "Chú Nam",
-        "Line": "Em kiếm được đủ linh kiện chưa?"
+        "Subject": "Lil BUddy",
+        "Line": "Bạn kiếm được đủ linh kiện chưa?"
       }
     ]
   ]

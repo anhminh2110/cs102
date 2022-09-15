@@ -4,31 +4,23 @@
     [
       {
         "Subject": "Sun Shroom",
-        "Line": "Xin chào em! Em tên là gì?"
-      },
-      {
-        "Subject": "Táy Máy",
-        "Line": "Xin chào ! Mình là Táy Máy"
+        "Line": "Hướng dẫn nhanh màn đánh Boss."
       },
       {
         "Subject": "Sun Shroom",
-        "Line": "Rất vui được gặp bạn. Xin được giới thiệu, mình là một thực vật ở đây."
+        "Line": "Boss có thể hồi máu và làm tăng số lượng bóng ma."
       },
       {
         "Subject": "Sun Shroom",
-        "Line": "Bạn có thể chỉ cho mình chúa tể bóng đen đang ở đâu được không?"
+        "Line": "Bông hoa màu tím có thể đẩy lùi người chơi. Có thể gây rất nhiều phiền phức"
       },
       {
         "Subject": "Sun Shroom",
-        "Line": "Thẳng đến thung lũng, nhảy qua trampoline và các thuộc hạ của người."
+        "Line": "Cần đứng ở nơi không chạm vào các bông hoa."
       },
       {
         "Subject": "Sun Shroom",
-        "Line": "Kẻ xấu có thể làm xuất hiện thêm thuộc hạ, vừa có thể hồi máu cho bản thân."
-      },
-      {
-        "Subject": "Táy Máy",
-        "Line": "Cảm ơn vì lời khuyên và xin tạm biệt."
+        "Line": "Đây là màn giải đố và có thể sẽ khá khó."
       }
     ],
     [

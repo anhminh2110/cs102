@@ -165,7 +165,7 @@ class EntityFactory:
                 x=x,
                 y=y,
                 sprite_path=ASSET_DIR / "items" / f"{entity_type.name.lower()}.png",
-                scale=0.15,
+                scale=0.2,
             )
 
         elif entity_type in TRAMPOLINE_PART_TYPES:
