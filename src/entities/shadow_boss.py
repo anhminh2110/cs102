@@ -37,12 +37,12 @@ class ShadowBoss(Shadow):
             duration_ms=ShadowBossConfig.SHIELDED_DURATION_MS,
             interval_ms=ShadowBossConfig.SHIELDED_INTERVAL_MS,
         ):
-            self._shielded()
+            self._shielded(50)
 
         super()._update_action()
 
     def _get_angry(self):
-        for _ in range(10):
+        for _ in range(50):
             bullet_id = self.world.add_entity(
                 EntityType.SHADOW_BULLET,
                 self.rect.centerx + random.random() * self.rect.width / 2,
@@ -55,8 +55,7 @@ class ShadowBoss(Shadow):
         self.hp -= damage
         self.start_hurt(duration_ms=ShadowBossConfig.HURT_DURATION_MS)
 
-    def _shielded(self):
-        heal_rate : int = 49
+    def _shielded(self, heal_rate: int):
         if self.hp < self.initial_hp - heal_rate:
             self.hp += heal_rate
 

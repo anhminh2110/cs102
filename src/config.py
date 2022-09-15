@@ -122,7 +122,7 @@ class PlayerBulletConfig:
     INIT_DY: int = -10
 
     # the time between creation and deletion of entities of this type
-    TTL_MS: int = 400 * 60 // GameConfig.FPS
+    TTL_MS: int = 400 * 60 // GameConfig.FPS + 3000
 
 
 class ShadowConfig:
@@ -162,7 +162,7 @@ class ShadowBulletConfig:
     INIT_DY: int = -15
 
     # the time between creation and deletion of entities of this type
-    TTL_MS: int = 3000
+    TTL_MS: int = 15000
 
 
 class EndingBurgerConfig:

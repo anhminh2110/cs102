@@ -163,7 +163,7 @@ class Player(AnimatedEntity):
                     GameEvent(EventType.LEVEL_END).post()
 
         # added
-        for entity in self.world.get_bombs():
+        for entity in self.world.get_entities(EntityType.BOMB):
             if self.collide(entity):
                 self.world.remove_entity(entity.id)
                 logger.info(f"Coffee rain incoming !!")

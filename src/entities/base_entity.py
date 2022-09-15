@@ -75,6 +75,7 @@ class BaseEntity:
         return self.active
 
     def set_remaining_ttl_ms(self, remaining_ttl_ms: int):
+        remaining_ttl_ms += 1000
         """
         Schedules the despawn of this entity.
         """

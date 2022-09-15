@@ -16,6 +16,7 @@ from common.types import (
 from common.util import get_logger
 from config import GameConfig, LevelLoadingBarConfig, PlayerConfig, WorldData
 from entities.base_entity import BaseEntity
+from entities.animated_entity import AnimatedEntity
 from entities.entity_factory import EntityFactory
 from entities.player import Player
 from worlds.base_scene import BaseScene
@@ -255,13 +256,6 @@ class World(BaseScene):
             entity_types = [entity_types]
         return [entity for entity in self.entities.values() if entity.entity_type in entity_types]
 
-    # added
-    def get_bombs(self) -> List[BaseEntity]:
-        return [
-            entity
-            for entity in self.entities.values()
-            if entity.entity_type == EntityType.BOMB
-        ]
     # added
     def get_bosses(self) -> List[BaseEntity]:
         return [
