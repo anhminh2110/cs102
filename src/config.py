@@ -116,13 +116,13 @@ class PlayerBulletConfig:
     SCALE: float = 0.7
     SPEED: int = 35
     GRAVITY: int = 2
-    DAMAGE: int = 10
+    DAMAGE: int = 5
 
     # initial vertical movement
     INIT_DY: int = -10
 
     # the time between creation and deletion of entities of this type
-    TTL_MS: int = 400 * 60 // GameConfig.FPS + 3000
+    TTL_MS: int = 400 * 60 // GameConfig.FPS + 250
 
 
 class ShadowConfig:
@@ -137,15 +137,12 @@ class ShadowBossConfig:
     SPRITE_PATH: Path = ASSET_DIR / "npcs" / "shadow"
     SCALE: float = 0.6
     ANIMATION_INTERVAL_MS: int = 200
-    SPEED: int = 1
+    SPEED: int = 2
     DAMAGE: int = 1
     INITIAL_HP: int = 100
 
-    ANGRY_INTERVAL_MS: int = 7000
+    ANGRY_INTERVAL_MS: int = 10000
     ANGRY_DURATION_MS: int = 2000
-
-    SHIELDED_INTERVAL_MS: int = 10000
-    SHIELDED_DURATION_MS: int = 6000
 
     HURT_DURATION_MS: int = 500
 

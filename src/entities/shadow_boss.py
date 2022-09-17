@@ -4,7 +4,7 @@ import random
 from common import util
 from common.types import ActionType, EntityType
 from common.util import now
-from config import Color, ShadowBossConfig
+from config import Color, ShadowBossConfig, GameConfig
 from entities.bullet import Bullet
 from entities.shadow import Shadow
 
@@ -32,17 +32,17 @@ class ShadowBoss(Shadow):
         ):
             self._get_angry()
 
-        if self.set_action(
-            ActionType.SHIELDED,
-            duration_ms=ShadowBossConfig.SHIELDED_DURATION_MS,
-            interval_ms=ShadowBossConfig.SHIELDED_INTERVAL_MS,
-        ):
-            self._shielded(50)
+        # if self.set_action(
+            # ActionType.IDLE,
+            # duration_ms=0,
+            # interval_ms=ShadowBossConfig.SHIELDED_INTERVAL_MS,
+        # ):
+            # self._shielded(1)
 
         super()._update_action()
 
     def _get_angry(self):
-        for _ in range(50):
+        for _ in range(25):
             bullet_id = self.world.add_entity(
                 EntityType.SHADOW_BULLET,
                 self.rect.centerx + random.random() * self.rect.width / 2,
@@ -55,10 +55,6 @@ class ShadowBoss(Shadow):
         self.hp -= damage
         self.start_hurt(duration_ms=ShadowBossConfig.HURT_DURATION_MS)
 
-    def _shielded(self, heal_rate: int):
-        if self.hp < self.initial_hp - heal_rate:
-            self.hp += heal_rate
-
     def _handle_get_hit(self):
         bullet: Bullet
         for bullet in self.world.get_entities(EntityType.PLAYER_BULLET):
@@ -69,6 +65,11 @@ class ShadowBoss(Shadow):
                 self.world.remove_entity(bullet.id)
 
                 self._take_damage(bullet.damage)
+
+                for i in range (2):
+                    self.world.add_entity(EntityType.SHADOW_BULLET,
+                                        random.randint(self.rect.x - 250, self.rect.x + 250),
+                                        GameConfig.HEIGHT / 3)
 
                 if self.hp <= 0:
                     self.die()
@@ -96,3 +97,8 @@ class ShadowBoss(Shadow):
                 color=Color.BOSS_HP_BAR,
                 margin=4,
             )
+
+            if self.hp <= 95:
+                self.hp += 0.2
+
+                "{:.2f}".format(self.hp)
