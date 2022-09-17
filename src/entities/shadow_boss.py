@@ -55,6 +55,15 @@ class ShadowBoss(Shadow):
         self.hp -= damage
         self.start_hurt(duration_ms=ShadowBossConfig.HURT_DURATION_MS)
 
+    def die(self):
+        super().die()
+        for _ in range(10):
+            self.world.add_entity(
+                EntityType.CANDY,
+                self.rect.centerx + random.random() * self.rect.width / 2,
+                self.rect.centery + random.random() * self.rect.height / 2,
+            )
+
     def _handle_get_hit(self):
         bullet: Bullet
         for bullet in self.world.get_entities(EntityType.PLAYER_BULLET):
@@ -98,7 +107,7 @@ class ShadowBoss(Shadow):
                 margin=4,
             )
 
-            if self.hp <= 95:
-                self.hp += 0.2
+            if self.hp <= 99:
+                self.hp += 1
 
                 "{:.2f}".format(self.hp)

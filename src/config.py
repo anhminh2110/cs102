@@ -116,7 +116,7 @@ class PlayerBulletConfig:
     SCALE: float = 0.7
     SPEED: int = 35
     GRAVITY: int = 2
-    DAMAGE: int = 5
+    DAMAGE: int = 8
 
     # initial vertical movement
     INIT_DY: int = -10
