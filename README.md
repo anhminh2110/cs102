@@ -15,3 +15,8 @@ Xem ghi chú tóm tắt các bài học: [LINK](https://github.com/STEAMforVietn
 9. [Tìm kiếm sức mạnh](https://github.com/STEAMforVietnam/cs102/tree/ls9-five)
 10. [Vượt qua đối thủ đáng gờm](https://github.com/STEAMforVietnam/cs102/tree/ls10-four)
 0
+ * Âm thanh sử dụng
+Level 3: Brainian Maniac (từ tựa game: Plants vs Zombie, người sáng tác: Laura Shihigara)
+Menu: Ultimate battle (dark ages) (từ tựa game: Plants vs Zombie 2, người sáng tác: PeterMcConnel)
+* Hình ảnh sử dụng
+Các hình ảnh NPC mới từ tựa game: Plants vs Zombie: Heroes của công ty EA
