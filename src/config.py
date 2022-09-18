@@ -161,6 +161,19 @@ class ShadowBulletConfig:
     # the time between creation and deletion of entities of this type
     TTL_MS: int = 15000
 
+class ShadowSonicConfig:
+    SPRITE_PATH: Path = ASSET_DIR / "items" / "shadow_sonic.png"
+    SCALE: float = 0.35
+    SPEED: int = 5
+    GRAVITY: int = 0
+    DAMAGE: int = 0
+
+    # initial vertical movement
+    INIT_DY: int = -15
+
+    # the time between creation and deletion of entities of this type
+    TTL_MS: int = 10000
+
 
 class EndingBurgerConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "player_bullet.png"

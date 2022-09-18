@@ -210,6 +210,10 @@ class Player(AnimatedEntity):
             if self.collide(shadow):
                 self._take_damage(shadow.damage)
 
+        for sonic in self.world.get_entities(EntityType.SHADOW_SONIC):
+            if self.collide(sonic):
+                self.rect.x -= 10
+
     def _take_damage(self, damage: int):
         now_ms = now()
         if now_ms - self.last_hit_t < PlayerConfig.INVULNERABLE_DURATION_MS:

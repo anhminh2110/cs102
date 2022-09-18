@@ -11,8 +11,7 @@ class ActionType(enum.Enum):
     DYING = "dying"
     HURT = "hurt"
     ANGRY = "angry"
-    # Added
-    SHIELDED = "shielded"
+    SONIC = "sonic"
 
 
 class EntityType(enum.Enum):
@@ -40,6 +39,8 @@ class EntityType(enum.Enum):
     HEART = 61
     BOMB = 62
     STALLIA = 63
+
+    SHADOW_SONIC = 64
 
     # When the player collects this item, the level ends.
     # For regular levels (ie. no special end-level condition), when designing the CSV file

@@ -13,6 +13,7 @@ from config import (
     PlayerInventoryConfig,
     ShadowBossConfig,
     ShadowBulletConfig,
+    ShadowSonicConfig,
     ShadowConfig,
     TrampolineConfig,
 )
@@ -29,6 +30,7 @@ from entities.shadow_boss import ShadowBoss
 from entities.trampoline import Trampoline
 from entities.trampoline_part import TrampolinePart
 from entities.flag_part import FlagPart
+from entities.sonic import Sonic
 
 
 class EntityFactory:
@@ -97,6 +99,22 @@ class EntityFactory:
                 speed=ShadowBulletConfig.SPEED,
                 damage=ShadowBulletConfig.DAMAGE,
             )
+
+        # Added
+        elif entity_type == EntityType.SHADOW_SONIC:
+            return Sonic(
+                entity_type=entity_type,
+                ttl_ms=ShadowSonicConfig.TTL_MS,
+                x=x,
+                y=y,
+                init_dy=ShadowSonicConfig.INIT_DY,
+                sprite_path=ShadowSonicConfig.SPRITE_PATH,
+                scale=ShadowSonicConfig.SCALE,
+                gravity=ShadowSonicConfig.GRAVITY,
+                speed=ShadowSonicConfig.SPEED,
+                damage=ShadowSonicConfig.DAMAGE,
+            )
+
         elif entity_type == EntityType.SHADOW_ALPHA:
             return ShadowAlpha(
                 entity_type=entity_type,
