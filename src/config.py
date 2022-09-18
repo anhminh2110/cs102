@@ -141,7 +141,7 @@ class ShadowBossConfig:
     DAMAGE: int = 1
     INITIAL_HP: int = 100
 
-    ANGRY_INTERVAL_MS: int = 10000
+    ANGRY_INTERVAL_MS: int = 9000
     ANGRY_DURATION_MS: int = 2000
 
     HURT_DURATION_MS: int = 500

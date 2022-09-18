@@ -35,7 +35,7 @@ class ShadowBoss(Shadow):
         if self.set_action(
             ActionType.SONIC,
             duration_ms=ShadowBossConfig.ANGRY_DURATION_MS,
-            interval_ms=ShadowBossConfig.ANGRY_INTERVAL_MS + 1000,
+            interval_ms=ShadowBossConfig.ANGRY_INTERVAL_MS + 2000,
         ):
             self._sonic_create()
 
