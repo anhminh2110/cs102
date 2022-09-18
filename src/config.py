@@ -116,7 +116,7 @@ class PlayerBulletConfig:
     SCALE: float = 0.7
     SPEED: int = 35
     GRAVITY: int = 2
-    DAMAGE: int = 7
+    DAMAGE: int = 5
 
     # initial vertical movement
     INIT_DY: int = -10
@@ -163,7 +163,7 @@ class ShadowBulletConfig:
 
 class ShadowSonicConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "shadow_sonic.png"
-    SCALE: float = 0.35
+    SCALE: float = 0.5
     SPEED: int = 5
     GRAVITY: int = 0
     DAMAGE: int = 0

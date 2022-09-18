@@ -30,8 +30,6 @@ from entities.shadow_boss import ShadowBoss
 from entities.trampoline import Trampoline
 from entities.trampoline_part import TrampolinePart
 from entities.flag_part import FlagPart
-from entities.sonic import Sonic
-
 
 class EntityFactory:
     """
@@ -102,7 +100,7 @@ class EntityFactory:
 
         # Added
         elif entity_type == EntityType.SHADOW_SONIC:
-            return Sonic(
+            return Bullet(
                 entity_type=entity_type,
                 ttl_ms=ShadowSonicConfig.TTL_MS,
                 x=x,

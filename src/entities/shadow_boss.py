@@ -35,7 +35,7 @@ class ShadowBoss(Shadow):
         if self.set_action(
             ActionType.SONIC,
             duration_ms=ShadowBossConfig.ANGRY_DURATION_MS,
-            interval_ms=ShadowBossConfig.ANGRY_INTERVAL_MS,
+            interval_ms=ShadowBossConfig.ANGRY_INTERVAL_MS + 1000,
         ):
             self._sonic_create()
 
@@ -53,14 +53,15 @@ class ShadowBoss(Shadow):
             bullet.move_random()
 
     def _sonic_create(self):
-        sonic_id = self.world.add_entity(
-            EntityType.SHADOW_SONIC,
-            self.rect.centerx + random.random() * self.rect.width / 2,
-            self.rect.centery + random.random() * self.rect.height / 2,
-        )
+        for _ in range (2):
+            sonic_id = self.world.add_entity(
+                EntityType.SHADOW_SONIC,
+                self.rect.centerx + random.random() * self.rect.width / 2,
+                self.rect.centery + random.random() * self.rect.height / 2,
+            )
 
-        sonic: Sonic = self.world.get_entity(sonic_id)
-        sonic.move_left(True)
+            sonic: Bullet = self.world.get_entity(sonic_id)
+            sonic.move_left(True)
 
     def _take_damage(self, damage: int):
         self.hp -= damage

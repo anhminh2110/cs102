@@ -212,7 +212,10 @@ class Player(AnimatedEntity):
 
         for sonic in self.world.get_entities(EntityType.SHADOW_SONIC):
             if self.collide(sonic):
-                self.rect.x -= 10
+                self.rect.x -= 20
+                self.talking = True
+            elif not self.npc_near_by or not self.npc_near_by.has_dialogue():
+                self.talking = False
 
     def _take_damage(self, damage: int):
         now_ms = now()
