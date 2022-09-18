@@ -166,18 +166,20 @@ class Player(AnimatedEntity):
         for entity in self.world.get_entities(EntityType.BOMB):
             if self.collide(entity):
                 self.world.remove_entity(entity.id)
-                logger.info(f"Coffee rain incoming !!")
+                logger.info(f"Bomb interactive activate !!")
                 for i in range (5):
-                    x = random.randint(0, 7000)
-                    y = random.randint(0, 700)
-                    self.world.add_entity(entity_type=EntityType.SHADOW_BULLET, x=x, y=y)
-                    self.world.add_entity(entity_type=EntityType.SHADOW, x=entity.rect.x + i*10, y=entity.rect.y + i*10)
+                    self.world.add_entity(EntityType.SHADOW_BULLET,
+                                        entity.rect.centerx + random.random() * entity.rect.width / 2,
+                                        GameConfig.HEIGHT / 3)
+
+                    self.world.add_entity(entity_type=EntityType.SHADOW,
+                                          x=entity.rect.x + i*10,
+                                          y=entity.rect.y + i*10)
 
         for entity in self.world.get_hearts():
             if self.collide(entity) and self.hp < 3:
                 self.world.remove_entity(entity.id)
                 GameEvent(EventType.COLLECT_ITEM, sender_type=self.entity_type).post()
-                logger.info(f"Player picked up 1 {entity.entity_type}")
                 logger.debug(f"Player HP: +1")
                 self.hp += 1
     def _handle_throw(self):
