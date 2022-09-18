@@ -107,7 +107,7 @@ class ShadowBoss(Shadow):
                 margin=4,
             )
 
-            if self.hp <= 99:
-                self.hp += 1
+            if self.hp <= 99.5:
+                self.hp += 0.5
 
                 "{:.2f}".format(self.hp)
